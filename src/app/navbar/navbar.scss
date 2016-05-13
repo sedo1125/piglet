@@ -1,0 +1,76 @@
+.nav-container {
+  padding: 20px 0 0;
+  margin: auto;
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+.wrapper {
+  display: inline-block;
+}
+
+.ribbon:after, .ribbon:before {
+    margin-top:0.5em;
+    content: "";
+    float:left;
+    border:1.5em solid #FF9E9D;
+}
+
+.ribbon:after {
+    border-right-color:transparent;
+}
+
+.ribbon:before {
+    border-left-color:transparent;
+}
+
+.ribbon a:link, .ribbon a:visited {
+    color:#FCE8FF;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    text-decoration:none;
+    float:left;
+    overflow:hidden;
+}
+
+.ribbon span {
+    background:#FF8598;
+    display:inline-block;
+    line-height:3em;
+    padding:0 1em;
+    margin-top:0.5em;
+    position:relative;
+    transition: background-color 0.2s, margin-top 0.2s;
+}
+
+.ribbon a:hover span {
+    background:#3FB8AF;
+    margin-top:0;
+}
+
+.ribbon span:before {
+    content: "";
+    position:absolute;
+    top:3em;
+    left:0;
+    border-right:0.5em solid #9B8651;
+    border-bottom:0.5em solid #fff;
+}
+
+.ribbon span:after {
+    content: "";
+    position:absolute;
+    top:3em;
+    right:0;
+    border-left:0.5em solid #9B8651;
+    border-bottom:0.5em solid #fff;
+}
+
+
+@media screen and (max-width : 580px) {
+  .nav-container {
+    display: none;
+  }
+}
