@@ -8,24 +8,21 @@
   </div>
 </div>
 
-<div class="mobile-nav">
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+<div class="mobile-button">
+      <button type="button" class="navbar-toggle" ng-class="navCollapsed && 'collapsed'" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
+</div>
+<div class="mobile-nav">
     <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
       <ul class="nav navbar-nav">
-        <li><a ui-sref="home" ng-click="navCollapsed = !navCollapsed"><span>Home</span></a></li>
-        <li><a ui-sref="todo" ng-click="navCollapsed = !navCollapsed"><span>To Do</span></a></li>
+        <li><a ui-sref="home" ng-click="navCollapsed = !navCollapsed"><span>Home <img class="coin" src="assets/images/coin.png" alt="coin" /></span></a></li>
+        <li><a ui-sref="todo" ng-click="navCollapsed = !navCollapsed"><span>To Do <img class="coin" src="assets/images/coin.png" alt="coin" /></span></a></li>
+        <img class="nav-img" src="assets/images/piggybank.jpg" alt="piggy-bank" />
         <!-- <li><a href="#"><span>Game</span></a></li> -->
       </ul>
 
-    </div><!-- /.navbar-collapse -->
-  </nav>
+    </div>
 </div>
