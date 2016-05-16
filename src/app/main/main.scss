@@ -18,6 +18,15 @@ h3 {
   font-size: 3em;
 }
 
+.row {
+  margin: 0px;
+}
+
+.no-padding {
+  padding: 0px;
+  width: 100%;
+}
+
 .title-heading {
   padding-bottom: 25px;
   font-weight: 500;
@@ -122,6 +131,7 @@ h3 {
   }
   .img-width-responsive {
     width: 100%;
+    height: auto;
   }
   .mobile-hidden {
     display: none;
@@ -129,9 +139,7 @@ h3 {
   .tabbed-font {
     font-family: 'Cookie', cursive;
   }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
+
 }
 
 @media screen and (min-width : 580px) {

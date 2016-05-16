@@ -74,3 +74,24 @@
     display: none;
   }
 }
+
+@media screen and (min-width : 580px) {
+  .mobile-nav {
+    display: none;
+  }
+}
+
+
+
+div.navbar-collapse.collapse {
+    display: block;
+    overflow: hidden;
+    max-height: 0px;
+}
+div.navbar-collapse.collapse.in {
+    max-height: 2000px;
+}
+nav.navbar.navbar-default{
+  padding: 0px;
+  margin: 0px;
+}

@@ -1,4 +1,4 @@
-<div class="nav-container">
+<div class="container nav-container">
   <div class="wrapper">
     <div class="ribbon">
         <a ui-sref="home"><span>Home</span></a>
@@ -6,4 +6,26 @@
         <a href="#"><span>Game</span></a>
     </div>
   </div>
+</div>
+
+<div class="mobile-nav">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+      <ul class="nav navbar-nav">
+        <li><a ui-sref="home" ng-click="navCollapsed = !navCollapsed"><span>Home</span></a></li>
+        <li><a ui-sref="todo" ng-click="navCollapsed = !navCollapsed"><span>To Do</span></a></li>
+        <!-- <li><a href="#"><span>Game</span></a></li> -->
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </nav>
 </div>
