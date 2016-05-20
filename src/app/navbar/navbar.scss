@@ -94,7 +94,7 @@
   opacity: 0.95;
   .nav-img {
     width: 70%;
-    margin-top: 40px;
+    margin-left: 35px;
   }
   .coin {
     height: 30px;
@@ -113,15 +113,15 @@
     display: block;
     overflow: hidden;
     height: 800px;
-    width:200px;
+    width:300px;
     transition: transform 0.8s;
-    margin-left: -200px;
-    background: #FF8598;
+    margin-left: -300px;
+    background: #FF7876;
 }
 
 .navbar-collapse.collapse.in {
     transition: transform 0.8s;
-    transform:translate(200px);
+    transform:translate(300px);
 }
 
 .icon-bar {

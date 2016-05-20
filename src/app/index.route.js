@@ -28,6 +28,11 @@
             templateUrl: 'app/fund/fund.html',
             controller: 'FundController',
             controllerAs: 'vm'
+          },
+          'map@home': {
+            templateUrl: 'app/map/map.html',
+            controller: 'MapController',
+            controllerAs: 'vm'
           }
         }
       })

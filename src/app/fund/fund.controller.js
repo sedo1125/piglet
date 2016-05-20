@@ -5,9 +5,17 @@
   .module('pigletJs')
   .controller('FundController', FundController);
 
-function FundController () {
+function FundController (moment) {
 
   var vm = this;
+  vm.moneys = 100.25;
+
+  vm.startdate =  moment([2016, 4, 1]);
+  vm.enddate = new moment();
+
+  vm.calc = function(start, end) {
+    return (end.diff(start, 'seconds') * 0.0000385)
+  }
 
   vm.animateElementInLeft = function($el) {
   $el.removeClass('hiddens');
