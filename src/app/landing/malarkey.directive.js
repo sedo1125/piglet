@@ -62,8 +62,10 @@
       }
 
       function getContributors() {
-        return githubContributor.getContributors(10).then(function() {
-          vm.contributors = ['piglet', 'heocon', 'ngugget', 'mama', 'em be', 'ani', 'mas', 'panda', 'pigle', 'ms p'];
+        return githubContributor.getContributors(5).then(function() {
+//          vm.contributors = ['piglet', 'heocon', 'ngugget', 'mama', 'em be', 'ani', 'mas', 'panda', 'pigle', 'ms p'];
+          vm.contributors = ['piglet', 'heocon', 'ngugget', 'pink' , 'ani'];
+
           return vm.contributors;
         });
       }
