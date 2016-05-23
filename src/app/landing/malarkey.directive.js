@@ -48,27 +48,10 @@
     }
 
     /** @ngInject */
-    function MalarkeyController($log, githubContributor) {
+    function MalarkeyController() {
       var vm = this;
 
-      vm.contributors = [];
-
-      activate();
-
-      function activate() {
-        return getContributors().then(function() {
-          $log.info('Piglet Names Loaded');
-        });
-      }
-
-      function getContributors() {
-        return githubContributor.getContributors(5).then(function() {
-//          vm.contributors = ['piglet', 'heocon', 'ngugget', 'mama', 'em be', 'ani', 'mas', 'panda', 'pigle', 'ms p'];
-          vm.contributors = ['piglet', 'heocon', 'ngugget', 'pink' , 'ani'];
-
-          return vm.contributors;
-        });
-      }
+      vm.contributors = ['piglet', 'heocon', 'ngugget', 'pink' , 'ani'];
     }
 
   }
