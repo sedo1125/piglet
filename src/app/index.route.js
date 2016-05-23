@@ -12,9 +12,7 @@
         url: '/',
         views : {
           '': {
-              templateUrl: 'app/main/main.html',
-              controller: 'MainController',
-              controllerAs: 'main'
+              templateUrl: 'app/main/main.html'
           },
           'landing@home': {
             templateUrl: 'app/landing/landing.html'

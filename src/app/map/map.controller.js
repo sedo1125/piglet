@@ -5,40 +5,29 @@
   .module('pigletJs')
   .controller('MapController', MapController);
 
-function MapController ($scope) {
-  var vm = this;
+function MapController ($scope, $log, MapService) {
+  var vm = this
+  vm.gr = {
+      lat: 42.96,
+      lng: -85.6,
+      zoom: 6
+  };
+  vm.markers = {};
 
-  angular.extend($scope, {
-              gr: {
-                  lat: 42.96,
-                  lng: -85.6,
-                  zoom: 6
-              },
-              markers: {}
-          });
+  activate();
 
-          vm.addMarkers = function() {
-              angular.extend($scope, {
-                  markers: {
-                      m1: {
-                          lat: 42.96,
-                          lng: -85.6,
-                          draggable: true
-                      },
-                      m2: {
-                          lat: 42.28,
-                          lng: -83.74,
-                          focus: true,
-                          draggable: true
-                      }
-                  }
-              });
-          };
+  function activate() {
+    return getMap().then(function(){
+      $log.info('Got places');
+    });
+  }
 
-          vm.removeMarkers = function() {
-              vm.markers = {};
-          }
-
-          vm.addMarkers();
-        }
+  function getMap() {
+    return MapService.getMap()
+      .then(function(data){
+        vm.markers = data;
+        return vm.markers;
+      })
+  }
+}
 })();
