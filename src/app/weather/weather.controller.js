@@ -27,7 +27,5 @@
             return vm.weather;
           });
       }
-      //vm.weather = weatherService.getWeather();
-
     }
 })();
