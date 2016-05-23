@@ -23,13 +23,23 @@ function MapController ($scope) {
                       m1: {
                           lat: 42.96,
                           lng: -85.6,
-                          draggable: true
+                          draggable: true,
+                          icon: {
+                            iconUrl: 'assets/images/marker.png',
+                            iconAnchor:   [54, 94], // point of the icon which will correspond to marker's location
+                            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                          }
                       },
                       m2: {
                           lat: 42.28,
                           lng: -83.74,
                           focus: true,
-                          draggable: true
+                          draggable: true,
+                          icon: {
+                            iconUrl: 'assets/images/marker.png',
+                            iconAnchor:   [54, 94], // point of the icon which will correspond to marker's location
+                            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                          }
                       }
                   }
               });
