@@ -13,7 +13,8 @@ function MapController ($scope, $log, MapService) {
       zoom: 6
   };
   vm.markers = {};
-
+  vm.newMap = newMap;
+  vm.strPlace = "Santa Fe"
   activate();
 
   function activate() {
@@ -28,6 +29,10 @@ function MapController ($scope, $log, MapService) {
         vm.markers = data;
         return vm.markers;
       })
+  }
+
+  function newMap() {
+    return alert(vm.strPlace)
   }
 }
 })();
