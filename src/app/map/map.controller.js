@@ -5,7 +5,7 @@
   .module('pigletJs')
   .controller('MapController', MapController);
 
-function MapController ($scope, $log, MapService, newMapService) {
+function MapController ($scope, $log, $http, MapService, newMapService) {
   var vm = this
   vm.gr = {
       lat: 42.96,
@@ -36,6 +36,12 @@ function MapController ($scope, $log, MapService, newMapService) {
     return newMapService.newMap(vm.strPlace)
       .then(function(data){
         vm.coordinates = data;
+        $http.post('https://api.mlab.com/api/1/databases/piglet/collections/Places?apiKey=rMvbsiIlVCNp-YtU3RM-px2Wg1w_WpEq', data)
+            .success(function () {
+                getMap();
+            })
+            .error(function () {
+            });
       })
   }
 }
