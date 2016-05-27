@@ -6,6 +6,7 @@
             <label>Enter new city: </label>
             <input type="text" ng-model="vm.strPlace" placeholder="City, State">
             <input type="Submit" value="Submit" class="btn btn-primary">
+            <br><h6>{{vm.coordinates}}</h6>
           </form>
           <leaflet class="leaflet" lf-center="vm.gr" width="100%" markers="vm.markers" height="480px"></leaflet>
     </div>
