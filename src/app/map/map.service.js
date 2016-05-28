@@ -13,19 +13,20 @@
     };
 
     function getMap() {
-      return $http.get('https://api.mlab.com/api/1/databases/piglet/collections/Places?f={%22_id%22:%200}&apiKey=rMvbsiIlVCNp-YtU3RM-px2Wg1w_WpEq')
-      //return $http.get('app/map/map.json')
+      return $http.get('https://api.mlab.com/api/1/databases/piglet/collections/Places?&apiKey=rMvbsiIlVCNp-YtU3RM-px2Wg1w_WpEq')
         .then(getMapCompleted)
         .catch(getMapFailed);
 
       function getMapCompleted(response) {
         vm.locations = [];
+        vm.list = [];
         for (vm.i = 0; vm.i < response.data.length; vm.i ++) {
-            vm.m = "m" + (vm.i + 1)
+            vm.m = Object.keys(response.data[vm.i])[1];
+            vm.oid = response.data[vm.i]["_id"]["$oid"];
+            vm.list.push({"location": vm.m, "oid": vm.oid});
             vm.locations[vm.i] = response.data[vm.i][vm.m];
         }
-        return vm.locations;
-      //  return vm.locations;
+        return {locations: vm.locations, list: vm.list};
       }
 
       function getMapFailed() {

@@ -15,6 +15,7 @@
         , 'ngResource'
         , 'angular-scroll-animate'
         , 'angularMoment'
-        , 'ui-leaflet']);
+        , 'ui-leaflet'
+        , 'as.sortable']);
 
 })();

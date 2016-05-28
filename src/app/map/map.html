@@ -6,9 +6,18 @@
             <label>Enter new city: </label>
             <input type="text" ng-model="vm.strPlace" placeholder="City, State">
             <input type="Submit" value="Submit" class="btn btn-primary">
-            <br><h6>coordinates: {{vm.coordinates}}</h6>
           </form>
-          <leaflet class="leaflet" lf-center="vm.gr" width="100%" markers="vm.markers" height="480px"></leaflet>
+        <div class="col-lg-8 col-lg-offset-2">
+          <h4 ng-hide="vm.list.length < 2">Click and drag!</h4>
+          <ul data-as-sortable class="list-group" ng-model="vm.list">
+            <li data-as-sortable-item class="list-group-item" ng-repeat="list in vm.list">
+              <div data-as-sortable-item-handle class="list-style">{{list.location}}
+                <button type="button" ng-click="vm.removeMap($index)" class="btn btn-danger btn-delete">X</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      <leaflet class="leaflet" lf-center="vm.gr" width="100%" markers="vm.markers" height="480px"></leaflet>
     </div>
   </div>
 </div>

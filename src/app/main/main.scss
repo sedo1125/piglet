@@ -144,6 +144,22 @@ h3 {
   box-shadow: 0px 0px 10px gray;
 }
 
+.list-group-item {
+  background: aliceblue;
+}
+
+.list-style {
+  font-family: 'Dancing Script', cursive;
+  font-size: 24px;
+  color: #262626;
+  font-weight: 600;
+}
+
+.btn-delete {
+  float: right;
+  font-family: helvetica;
+}
+
 @media screen and (max-width : 580px) {
   .main-weather-bg {
     width: 100%;
