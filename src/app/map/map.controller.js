@@ -42,7 +42,7 @@ function MapController ($scope, $log, $timeout, MapService, newMapService, delet
         $timeout(function () {
             vm.strPlace = "";
             activate();
-        }, 100);
+        }, 20);
       })
   }
 
@@ -53,7 +53,7 @@ function MapController ($scope, $log, $timeout, MapService, newMapService, delet
       .then(function() {
         $timeout(function () {
             activate();
-        }, 100);
+        }, 20);
       })
   }
 }
