@@ -31,6 +31,14 @@
             templateUrl: 'app/map/map.html',
             controller: 'MapController',
             controllerAs: 'vm'
+          },
+          'facts@home': {
+            templateUrl: 'app/facts/facts.html',
+            controller: 'FactsController',
+            controllerAs: 'vm'
+          },
+          'footer@home': {
+            templateUrl: 'app/footer/footer.html'
           }
         }
       })

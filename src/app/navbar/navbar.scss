@@ -109,19 +109,21 @@
   z-index: 999;
 }
 
+$navwidth: 210px;
+
 .navbar-collapse.collapse {
     display: block;
     overflow: hidden;
     height: 800px;
-    width:300px;
+    width:$navwidth;
     transition: transform 0.8s;
-    margin-left: -300px;
+    margin-left: -$navwidth;
     background: #FF7876;
 }
 
 .navbar-collapse.collapse.in {
     transition: transform 0.8s;
-    transform:translate(300px);
+    transform:translate($navwidth);
 }
 
 .icon-bar {

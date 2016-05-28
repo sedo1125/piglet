@@ -4,11 +4,13 @@
       <h2 class="title-heading">Weather</h2>
       <div class="main-img-container">
         <div class="main-weather-bg" style="background: url({{vm.weather.bg}})">
-            <img class="main-img img-responsive center-block" src="{{vm.weather.img}}" alt="I'm a piglet"><br>
+            <img class="weather-img img-width-responsive center-block" src="{{vm.weather.img}}" alt="I'm a piglet"><br>
         </div>
       </div>
-      <h4 class="weather-title">Grand Rapids, MI</h4>
-      <h4 class="weather-title">{{ vm.weather.temp.current | temp:0 }}  <img class="weather-icon" ng-src="{{vm.weather.clouds}}" alt="weather-icon"></h4>
+      <div class="weather-data">
+        <h4 class="weather-title">Grand Rapids, MI</h4>
+        <h4 class="weather-title">{{ vm.weather.temp.current | temp:0 }}  <img class="weather-icon" ng-src="{{vm.weather.clouds}}" alt="weather-icon"></h4>
+      </div>
     </div>
   </div>
 <!-- </div> -->

@@ -18,8 +18,36 @@
     }
 
     function newMapSuccess(_results) {
-      var queryResults = _results.data.results;
-      return queryResults[0].geometry.location
+      var address = _results.data.results[0].formatted_address;
+      var data = _results.data.results[0].geometry.location;
+      var holder =
+      {
+          "test" : {
+          "lat": data["lat"],
+          "lng": data["lng"],
+          "focus": true,
+          "draggable": true,
+          "icon": {
+              "iconUrl": "assets/images/marker.png",
+              "iconAnchor": [
+                  54,
+                  94
+              ],
+              "popupAnchor": [
+                  -3,
+                  -76
+              ]
+            }
+          }
+      }
+      var jsonstr = angular.toJson(holder);
+      var new_jsonstr = jsonstr.replace("test", address);
+      var new_holder = angular.fromJson(new_jsonstr);
+      $http.post('https://api.mlab.com/api/1/databases/piglet/collections/Places?apiKey=rMvbsiIlVCNp-YtU3RM-px2Wg1w_WpEq', new_holder)
+          .success(function () {
+          })
+          .error(function () {
+          });
     }
 
     function newMapFail() {
