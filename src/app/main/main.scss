@@ -195,9 +195,11 @@ h3 {
 @media screen and (max-width : 580px) {
   .main-weather-bg {
     width: 100%;
+    height: 300px;
   }
   .weather {
     padding: 0px;
+    height: 700px;
   }
   .img-width-responsive {
     width: 100%;
@@ -208,6 +210,18 @@ h3 {
   }
   .tabbed-font {
     font-family: 'Cookie', cursive;
+  }
+  .weather-img {
+    margin-top: 20px;
+    max-width: 300px;
+  }
+
+  .weather-data {
+    margin-top: 100px;
+  }
+
+  .fund {
+    height:875px;
   }
 
 }

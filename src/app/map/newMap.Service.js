@@ -26,7 +26,7 @@
           "lat": data["lat"],
           "lng": data["lng"],
           "focus": true,
-          "draggable": true,
+          "draggable": false,
           "icon": {
               "iconUrl": "assets/images/marker.png",
               "iconAnchor": [
@@ -43,16 +43,27 @@
       var jsonstr = angular.toJson(holder);
       var new_jsonstr = jsonstr.replace("test", address);
       var new_holder = angular.fromJson(new_jsonstr);
-      $http.post('https://api.mlab.com/api/1/databases/piglet/collections/Places?apiKey=rMvbsiIlVCNp-YtU3RM-px2Wg1w_WpEq', new_holder)
-          .success(function () {
-          })
-          .error(function () {
-          });
+      return $http.post('https://api.mlab.com/api/1/databases/piglet/collections/Places?apiKey=rMvbsiIlVCNp-YtU3RM-px2Wg1w_WpEq', new_holder)
+      .then(newMapPosted)
+      .catch(newMapNotPosted);
     }
 
     function newMapFail() {
       $log.info('Error in geocode');
     }
+
+    function newMapPosted() {
+      $log.info('New map data saved')
+    }
+
+    function newMapNotPosted() {
+      $log.info('New map data not saved')
+    }
+
+
+
   }
+
+
 
 })();
