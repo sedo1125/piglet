@@ -28,6 +28,7 @@ function MapController ($scope, $log, $timeout, MapService, newMapService, delet
       .then(function(data){
         vm.markers = data.locations;
         vm.list = data.list;
+        $log.log(vm.list);
         return;
       })
   }
