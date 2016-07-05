@@ -14,7 +14,9 @@
       return $http.get('https://maps.googleapis.com/maps/api/geocode/json?address=' +
                 strPlace + '&key=AIzaSyDD1D12EKCRsm3B_2xb_Bo8r997vxyW_mU')
         .then(newMapSuccess)
-        .catch(newMapFail);
+          .catch(newMapFail)
+        .then(newMapPosted)
+          .catch(newMapNotPosted);
     }
 
     function newMapSuccess(_results) {
@@ -44,8 +46,6 @@
       var new_jsonstr = jsonstr.replace("test", address);
       var new_holder = angular.fromJson(new_jsonstr);
       return $http.post('https://api.mlab.com/api/1/databases/piglet/collections/Places?apiKey=rMvbsiIlVCNp-YtU3RM-px2Wg1w_WpEq', new_holder)
-      .then(newMapPosted)
-      .catch(newMapNotPosted);
     }
 
     function newMapFail() {

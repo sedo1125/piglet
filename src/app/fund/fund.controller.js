@@ -14,7 +14,10 @@ function FundController (moment) {
   vm.enddate = new moment();
 
   vm.calc = function(start, end) {
-    return (end.diff(start, 'seconds') * 0.0000385)
+    return (end.diff(start, 'seconds') * 0.0000385 * 2
+    - 47 //pink nike shoes
+    - 92 //banna republic dresses
+    )
   }
 
   vm.animateElementInLeft = function($el) {

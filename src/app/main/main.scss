@@ -189,7 +189,16 @@ h3 {
 
 .footer {
   @include background('../assets/images/bg-footer.jpg', 0.01, 0.4);
-  padding-bottom: 500px;
+  padding-bottom: 300px;
+  .title-heading {
+    padding-top: 200px;
+  }
+  h3 {
+    font-family: 'Cookie', cursive;
+    width: 65%;
+    text-align: right;
+    color: pink;
+  }
 }
 
 @media screen and (max-width : 580px) {
