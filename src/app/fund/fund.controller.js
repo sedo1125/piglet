@@ -17,6 +17,7 @@ function FundController (moment) {
     return (end.diff(start, 'seconds') * 0.0000385 * 2
     - 47 //pink nike shoes
     - 92 //banna republic dresses
+    - 100 //earrings
     )
   }
 
