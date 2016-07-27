@@ -187,6 +187,11 @@ h3 {
   margin-top: 70px;
 }
 
+.img-poster {
+  padding-top: 150px;
+  height: 700px;
+}
+
 .footer {
   @include background('../assets/images/bg-footer.jpg', 0.01, 0.4);
   padding-bottom: 300px;
