@@ -18,6 +18,7 @@ function FundController (moment) {
     - 47 //pink nike shoes
     - 92 //banna republic dresses
     - 100 //earrings
+    -100 // chair
     )
   }
 
