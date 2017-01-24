@@ -4,7 +4,7 @@
     <div class="col-lg-8 col-lg-offset-2 map-img">
           <form class="form-group" ng-submit=vm.newMap()>
             <label>Enter new city: </label>
-            <input type="text" ng-model="vm.strPlace" placeholder="City, State">
+            <input type="text" class="inputbox" ng-model="vm.strPlace" placeholder="City, State">
             <input type="Submit" value="Submit" class="btn btn-primary">
           </form>
         <div class="col-lg-8 col-lg-offset-2">
@@ -12,7 +12,7 @@
           <ul data-as-sortable class="list-group" ng-model="vm.list">
             <li data-as-sortable-item class="list-group-item" ng-repeat="list in vm.list">
               <div data-as-sortable-item-handle class="list-style">{{list.location}}
-                <button type="button" ng-click="vm.removeMap($index)" class="btn btn-danger btn-delete">X</button>
+                <!-- <button type="button" ng-click="vm.removeMap($index)" class="btn btn-danger btn-delete">X</button> -->
               </div>
             </li>
           </ul>

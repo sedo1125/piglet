@@ -37,6 +37,11 @@
             controller: 'FactsController',
             controllerAs: 'vm'
           },
+          'wishlist@home': {
+            templateUrl: 'app/wishlist/wishlist.html',
+            controller: 'WishlistController',
+            controllerAs: 'vm'
+          },
           'footer@home': {
             templateUrl: 'app/footer/footer.html'
           }

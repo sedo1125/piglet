@@ -187,9 +187,23 @@ h3 {
   margin-top: 70px;
 }
 
+.img-poster {
+  padding-top: 150px;
+  height: 700px;
+}
+
 .footer {
   @include background('../assets/images/bg-footer.jpg', 0.01, 0.4);
-  padding-bottom: 500px;
+  padding-bottom: 300px;
+  .title-heading {
+    padding-top: 200px;
+  }
+  h3 {
+    font-family: 'Cookie', cursive;
+    width: 65%;
+    text-align: right;
+    color: pink;
+  }
 }
 
 @media screen and (max-width : 580px) {
@@ -271,4 +285,43 @@ blockquote::before{
 blockquote::after{
   /*Reset to make sure*/
   content: "";
+}
+
+.checkbox {
+  display: inline-block;
+}
+
+.ipad-bg {
+  background-image: url('../assets/images/ipad-mid.png');
+  background-size: 100%;
+  border: 0px;
+  border-radius: 0px !important;
+}
+
+.ipad-top {
+  background-image: url('../assets/images/ipad-top.png');
+  background-size: 100%;
+  border: 0px;
+  border-radius: 0px;
+  padding-bottom: 50px;
+  background-color: #f5f5f5
+}
+
+.ipad-bot {
+  background-image: url('../assets/images/ipad-top.png');
+  background-size: 100%;
+  border: 0px;
+  border-radius: 0px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  background-color: #f5f5f5;
+  background-position: 50% 100%;
+}
+
+.list-group {
+  margin-bottom: 0
+}
+
+.inputbox {
+  margin-bottom: 20px;
 }
