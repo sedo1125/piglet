@@ -5,7 +5,7 @@
   .module('pigletJs')
   .controller('FundController', FundController);
 
-function FundController (moment) {
+function FundController (moment, $http, $log) {
 
   var vm = this;
   vm.moneys = 100.25;
@@ -18,8 +18,32 @@ function FundController (moment) {
     - 47 //pink nike shoes
     - 92 //banna republic dresses
     - 100 //earrings
-    -100 // chair
+    - 100 // chair
+    - 80 //tan low boots
+    - 220 //flight to orlando
+    - vm.total
     )
+  }
+
+  activate();
+
+  function activate() {
+    return getMoneys().then(function(){
+      $log.info('Got moneys');
+    });
+  }
+  function getMoneys() {
+    return $http.get('https://api.mlab.com/api/1/databases/piglet/collections/Gifts?&apiKey=rMvbsiIlVCNp-YtU3RM-px2Wg1w_WpEq')
+      .then(function(response){
+        vm.list = [];
+        vm.total = 0;
+        for (vm.i = 0; vm.i < response.data.length; vm.i ++) {
+            vm.n = response.data[vm.i]["cost"];
+            vm.total = vm.total + vm.n
+        }
+        $log.log(vm.total);
+        return;
+      })
   }
 
   vm.animateElementInLeft = function($el) {

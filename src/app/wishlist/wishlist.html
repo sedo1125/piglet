@@ -3,17 +3,21 @@
     <h2 class="title-heading">A Dream Is A Wish Your Piglet Makes</h2>
     <form class="form-group" ng-submit=vm.newWish()>
       <label>I want dis: </label>
-      <input type="text" ng-model="vm.strWish" placeholder="">
+      <input type="text" class="inputbox" ng-model="vm.strWish" placeholder="">
       <input type="Submit" value="Submit" class="btn btn-primary">
     </form>
-    <div class="col-lg-8 col-lg-offset-2">
+    <div class="col-lg-4 col-md-6 col-lg-offset-4 col-md-offset-3">
+      <div class="list-group list-group-item ipad-top"></div>
       <ul data-as-sortable class="list-group" ng-model="vm.list">
-        <li data-as-sortable-item class="list-group-item" ng-repeat="list in vm.list">
-          <div data-as-sortable-item-handle class="list-style">{{list.item}}
+        <li data-as-sortable-item class="list-group-item ipad-bg" ng-repeat="list in vm.list">
+          <div data-as-sortable-item-handle class="list-style">
+            <input class="checkbox" type="checkbox" ng-model="list.bought"  ng-click="vm.removeWish($index)">
+            {{list.item}}
             <!-- <button type="button" ng-click="vm.removeMap($index)" class="btn btn-danger btn-delete">X</button> -->
           </div>
         </li>
       </ul>
+      <div class="list-group list-group-item ipad-bot"></div>
     </div>
   </div>
 </div>

@@ -5,11 +5,11 @@
   .module('pigletJs')
   .controller('WishlistController', WishlistController);
 
-function WishlistController ($scope, $log, $timeout, WishService, newWishService, deleteMapService) {
+function WishlistController ($scope, $log, $timeout, WishService, newWishService, deleteWishService) {
   var vm = this
 
   vm.newWish = newWish;
-  vm.removeMap = removeMap;
+  vm.removeWish = removeWish;
   activate();
 
   function activate() {
@@ -28,10 +28,6 @@ function WishlistController ($scope, $log, $timeout, WishService, newWishService
   }
 
   function newWish() {
-    // if (vm.strPlace = "City, State") {
-    //   alert("Enter a valid city")
-    //   return
-    // }
     return newWishService.newWish(vm.strWish)
       .then(function(){
         $timeout(function () {
@@ -42,9 +38,11 @@ function WishlistController ($scope, $log, $timeout, WishService, newWishService
   }
 
 
-  function removeMap(index) {
-    var delPlace = vm.list[index]["oid"];
-    return deleteMapService.deleteMap(delPlace)
+  function removeWish(index) {
+    var delWish = vm.list[index]["oid"];
+    var wish = vm.list[index]["item"];
+        $log.log(wish)
+    return deleteWishService.deleteWish(delWish, wish)
       .then(function() {
         $timeout(function () {
             activate();

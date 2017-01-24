@@ -21,8 +21,9 @@
         vm.list = [];
         for (vm.i = 0; vm.i < response.data.length; vm.i ++) {
             vm.m = response.data[vm.i]["wish"];
+            vm.n = response.data[vm.i]["bought"];
             vm.oid = response.data[vm.i]["_id"]["$oid"];
-            vm.list.push({"item": vm.m, "oid": vm.oid});
+            vm.list.push({"item": vm.m, "bought": vm.n, "oid": vm.oid});
         }
         return {list: vm.list};
       }
