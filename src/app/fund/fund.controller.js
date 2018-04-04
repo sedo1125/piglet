@@ -12,15 +12,16 @@ function FundController (moment, $http, $log) {
 
   vm.startdate =  moment([2016, 4, 1]);
   vm.enddate = new moment();
+  vm.enddate =  moment([2016, 4, 1]);
 
   vm.calc = function(start, end) {
     return (end.diff(start, 'seconds') * 0.0000385 * 2
-    - 47 //pink nike shoes
-    - 92 //banna republic dresses
-    - 100 //earrings
-    - 100 // chair
-    - 80 //tan low boots
-    - 220 //flight to orlando
+    //- 47 //pink nike shoes
+    //- 92 //banna republic dresses
+    //- 100 //earrings
+    ///- 100 // chair
+    //- 80 //tan low boots
+    //- 220 //flight to orlando
     - vm.total
     )
   }
